@@ -1,0 +1,3 @@
+/etc/mytools/res *(rw,no_root_squash)
+/home/pxe/nfs/iso/ *(rw,async,no_root_squash)
+

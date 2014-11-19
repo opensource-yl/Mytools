@@ -1,0 +1,9 @@
+LABEL RETURN
+MENU LABEL return
+kernel menu.c32
+append initrd=pxelinux.cfg/default
+
+LABEL 0
+MENU LABEL Fedora11-64
+kernel fedora11-64/vmlinuz
+append initrd=fedora11-64/initrd.img noipv6

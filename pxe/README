@@ -1,0 +1,47 @@
+=================================================
+This is a script for PXE-server install.
+
+Use it:
+
+1, After you untar this file "PXEsetup", you get a director named "pxe/".
+2, Find the file "setup.sh" and execute it.
+
+Notice:
+
+1, This script will automatically check whatever it needs, So you need to make sure the network and the repo working fine.
+2, PXE server is based on these server DHCP, tftp, tftp-server, xinetd, http, autofs.
+3, To enhance the PXE function, some other services added, such as: nfs, samba, and something else.
+4, Don't move any files please, especily "conf".
+
+----------------------------------------------
+Scripts:
+
+1, Check the network whether it works.
+
+2, Create all the directories and files it needs.
+
+3, Begin to install the servers which is lack.
+
+4, Check if all the servers were installed. If one of them was failed. The script will install it once again. If still failed, the scripts would return with a warning.
+
+5, Add all the services to chkconfig list.
+
+6, Start to modefy all the services' conf like /etc/dhcpd.conf.
+
+7, Collect all the ISO to the mount_file.
+
+8, Start all the services and check if all of them are running fine.
+
+9, Over.
+---------------------------------------------
+Changelog:
+V1.34: 
+Add SuSe install.
+
+-------------------------------------------
+Name:		PXEsetup
+Ver:		V1.34
+Write by:	LiuYu
+Contact:	liuyu3210@gmail.com
+
+

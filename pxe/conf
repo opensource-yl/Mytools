@@ -1,0 +1,35 @@
+#---------------------------------
+#This is a file of variables.
+#---------------------------------
+
+#
+
+range_from=2
+range_to=99
+#When boot from PXE, the DHCP serve from
+
+########################################
+#Those directors blow are needed by server.
+#dir_iso is the dir that where you put the
+#ISO files
+#
+dir_tftpboot=/tftpboot
+dir_pxelinux=/tftpboot/pxelinux.cfg
+dir_iso_mount=/mnt/isos
+dir_iso=/home/iso
+dir_selinux=/usr/lib/syslinux
+dir_busybox=/tftpboot/busybox
+dir_autoconf=/etc/autofs
+dir_ks=/tftpboot/ks
+dir_kernel=/tftpboot/kernel
+dir_nfs=/home/pxe/nfs
+dir_linux=/home/pxe/nfs/linux
+dir_skysan=/home/pxe/nfs/skysan
+dir_windows=/home/pxe/nfs/windows
+
+#########################################
+#
+#
+#########################################
+#Those variables are collected, Change it
+#if you have different setting.

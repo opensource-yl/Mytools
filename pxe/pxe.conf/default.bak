@@ -1,0 +1,90 @@
+default menu.c32
+prompt 0
+timeout 3000000
+#################################
+#label 0 
+#	kernel vmlinuz
+#	append initrd=initrd.img noipv6 ks=http://10.10.2.103/var/anaconda-ks.cfg
+#label 1
+#	kernel centos54/vmlinuz
+#	append initrd=centos54/initrd.img noipv6 ks=http://10.10.2.103/var/anaconda-ks.cfg
+###################################
+MENU TITLE Linux install
+
+#LABEL 1
+#MENU LABEL centos5.2-32
+#kernel centos52-32/vmlinuz
+#append initrd=centos52-32/initrd.img noipv6 ks=http://10.10.37.103/var/anaconda-ks.cfg
+
+#MENU SEPARATOR
+
+#LABEL 2
+#MENU LABEL centos5.2-64
+#kernel centos52-64/vmlinuz
+#append initrd=centos52-64/initrd.img noipv6 ks=http://10.10.37.103/var/anaconda-ks.cfg
+
+#MENU SEPARATOR
+
+#LABEL 3
+#MENU LABEL centos5.3-32
+#kernel centos53-32/vmlinuz
+#append initrd=centos53-32/initrd.img noipv6 ks=http://10.10.37.103/var/anaconda-ks.cfg
+#append ksdevice=eth0 load_ramdisk=1 initrd=initrd.img network ks=http://10.10.37.103/var/anaconda-ks.cfg
+#LABEL 4
+#MENU LABEL centos5.3-64
+#kernel centos53-64/vmlinuz
+#append initrd=centos53-64/initrd.img noipv6 ks=http://10.10.37.103/var/anaconda-ks.cfg
+#########################################
+#LABEL 5
+#MENU LABEL centos5.4-32
+#kernel centos54-32/vmlinuz
+#append initrd=centos54-32/initrd.img noipv6 ks=http://10.10.37.103/var/anaconda-ks.cfg
+
+#########################################
+#LABEL 6
+#MENU LABEL centos6.2-64
+#kernel centos62-64/vmlinuz
+#append initrd=centos62-64/initrd.img noipv6 ks=http://10.10.37.103/var/anaconda-ks.cfg
+
+##########################################
+LABEL centos0
+MENU LABEL centos-auto
+kernel menu.c32
+append pxelinux.cfg/autocentos
+
+LABEL centos1
+MENU LABEL centos-manual
+kernel menu.c32
+append pxelinux.cfg/manualcentos
+
+LABEL suse0
+MENU LABEL suse-auto
+kernel menu.c32
+append pxelinux.cfg/autosuse
+
+LABEL suse1
+MENU LABEL suse-manual
+kernel menu.c32
+append pxelinux.cfg/manualsuse
+
+LABEL fedora0
+MENU LABEL fedora-auto
+kernel menu.c32
+append pxelinux.cfg/autofedora
+
+LABEL fedora1
+MENU LABEL fedora-manual
+kernel menu.c32
+append pxelinux.cfg/manualfedora
+
+LABEL windows
+MENU LABEL windows
+kernel chain.c32 
+append pxelinux.cfg/windows
+
+#LABEL auto
+#MENU LABEL centos5.4-32
+#kernel centos54-32/vmlinuz
+#append initrd=centos54-32/initrd.img noipv6 ks=http://10.10.37.103/var/anaconda-ks.cfg
+
+
