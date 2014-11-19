@@ -20,6 +20,7 @@ dir_iso=/home/iso
 dir_selinux=/usr/lib/syslinux
 dir_busybox=/tftpboot/busybox
 dir_autoconf=/etc/autofs
+file_iso_conf=/etc/autofs/mount.iso
 dir_ks=/tftpboot/ks
 dir_kernel=/tftpboot/kernel
 dir_nfs=/home/pxe/nfs
@@ -33,3 +34,9 @@ dir_windows=/home/pxe/nfs/windows
 #########################################
 #Those variables are collected, Change it
 #if you have different setting.
+pxe_ip=10.66.12.156
+gateway=10.66.13.254
+netmask=255.255.255.0
+RANGE_FROM=10.66.12.1
+RANGE_TO=10.66.12.253
+SUBNET=10.66.12.0

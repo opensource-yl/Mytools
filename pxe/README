@@ -34,6 +34,13 @@ Scripts:
 
 9, Over.
 ---------------------------------------------
+
+Current supporting OS:
+Red Hat Enterprise Linux
+CentOS
+SuSe
+Windows
+
 Changelog:
 V1.34: 
 Add SuSe install.

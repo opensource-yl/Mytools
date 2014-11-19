@@ -7,9 +7,11 @@ config_dhcp ()
 {
 cp /etc/dhcpd.conf /etc/dhcpd.conf.bak
 cp ./pxe.conf/dhcpd.conf /etc/dhcpd.conf
-sed -i s/PXESERVER/$pxe_ip/g /etc/dhcpd.conf
-WAY=$gateway
-sed -i "s/way/$WAY/g" /etc/dhcpd.conf
+sed -i "s/PXESERVER/$pxe_ip/g" /etc/dhcpd.conf
+sed -i "s/GATEWAY/$gateway/g" /etc/dhcpd.conf
+sed -i "s/SUBNET/$SUBNET/g" /etc/dhcpd.conf
+sed -i "s/RANGE_FROM/$RANGE_FROM/g" /etc/dhcpd.conf
+sed -i "s/RANGE_TO/$RANGE_TO/g" /etc/dhcpd.conf
 #
 fun_log "Configure DHCP server"
 }
@@ -17,7 +19,7 @@ fun_log "Configure DHCP server"
 #============AUTOFS===========
 config_autofs()
 {
-echo "$dir_iso $dir_iso_mount --ghost ">>/etc/auto.master
+echo "$dir_iso_mount $file_iso_conf --ghost ">>/etc/auto.master
 sh update_mount.sh
 fun_log "Collect autofs infomation"
 }
@@ -26,10 +28,6 @@ fun_log "Collect autofs infomation"
 config_http()
 {
 cp -rf ./pxe.conf/welcome.conf /etc/httpd/conf.d/welcome.conf >message
-#ln -s $dir_ks /var/www/html/ks
-#ln -s $dir_iso_mount /var/www/html/RPM
-#ln -s $dir_iso /var/www/html/isos
-#ln -s $dir_nfs /var/www/html/nfs
 fun_log "Configure /etc/httpd/"
 }
 #===========pxelinux.0========
@@ -41,14 +39,6 @@ fun_log "Configure syslinux"
 }
 
 #===========default===========
-config_mv()
-{
-#cp ./pxelinux/
-cp -rf ./pxe.conf/pxelinux/* $dir_tftpboot/pxelinux.cfg/
-sh update_pxe.sh
-#sed -i s/10.10.37.103/$pxe_ip/ $dir_tftpboot/pxelinux.cfg/autocentos
-fun_log "Configure pxelinux.cfg"
-}
 #============tftp=============
 config_tftp()
 {

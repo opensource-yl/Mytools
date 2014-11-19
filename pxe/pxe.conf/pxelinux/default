@@ -3,19 +3,10 @@ prompt 0
 timeout 300000000
 MENU TITLE system install
 
-LABEL skysan
-MENU LABEL SkySAN
+LABEL Busybox
+MENU LABEL BusyBox
 kernel busybox/vmlinuz 
 append initrd=busybox/busybox.img
 #MENU PASSWD 111111
 
-LABEL centos0
-MENU LABEL CentOS-Auto
-kernel menu.c32
-append pxelinux.cfg/autocentos
-
-LABEL centos1
-MENU LABEL CentOS-Manual
-kernel menu.c32
-append pxelinux.cfg/manual
 
