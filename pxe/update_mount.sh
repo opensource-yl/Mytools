@@ -6,7 +6,7 @@
 #
 #Wrote by yuliu 
 #Modefied by 11/19/2014
-#Any problem please feel free to contact me: yuliu@redhat.com / liuyu3210@gmailc.om
+#Any problem please feel free to contact me: yuliu@redhat.com / liuyu3210@gmail.com
 #####
 . conf
 . fun.conf
