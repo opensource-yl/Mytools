@@ -3,7 +3,7 @@ This is a script for PXE-server install.
 
 Use it:
 
-1, After you untar this file "PXEsetup", you get a director named "pxe/".
+1, Before you run this tool, make sure your host is under the supporting OS list.
 2, Find the file "setup.sh" and execute it.
 
 Notice:
@@ -36,13 +36,19 @@ Scripts:
 ---------------------------------------------
 
 Current supporting OS:
+Red Hat Enterprise Linux 5.x/6.x
+CentOS 5.x/6.x
+
+But after you install this env, it can be used for installing:
 Red Hat Enterprise Linux
+Fedora
 CentOS
 SuSe
 Windows
 
+
 Changelog:
-V1.34: 
+V1.35: 
 Add SuSe install.
 
 -------------------------------------------
