@@ -4,8 +4,6 @@
 
 #
 
-range_from=2
-range_to=99
 #When boot from PXE, the DHCP serve from
 
 ########################################
